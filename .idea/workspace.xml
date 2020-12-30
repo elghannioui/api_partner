@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1ca94bc-1c24-495f-a877-1cc0daef6da0" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="8503cc68-da86-49d7-9eb1-424b269138fa" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/propel/propel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/klein/klein" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1ly8EkkbG3DNtJJR5WvHA3ASMPi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dumpAutoload C:/Users/DELL/PhpstormProjects/api_partner/composer.json" value="--no-interaction --ansi --verbose" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/partner/jwt" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\PhpstormProjects\api_partner\src\partner\jwt" />
+      <recent name="C:\Users\DELL\PhpstormProjects\api_partner" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Built-in Web Server.local">
+    <configuration name="default.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/generated-sql/default.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="93b8a291-0cfa-4630-b4a6-4a10c310ade8" />
+      <method v="2" />
+    </configuration>
+    <configuration name="local" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="9005">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Database Script.default.sql" />
+      <item itemvalue="PHP Built-in Web Server.local" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.default.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1ca94bc-1c24-495f-a877-1cc0daef6da0" name="Default Changelist" comment="" />
+      <created>1608557860588</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608557860588</updated>
+      <workItem from="1608557861767" duration="4463000" />
+      <workItem from="1608635770000" duration="515000" />
+      <workItem from="1608721196489" duration="887000" />
+      <workItem from="1608797636816" duration="7795000" />
+      <workItem from="1608844524405" duration="4991000" />
+      <workItem from="1609163032233" duration="9337000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="804" y="207" key="#PHP" timestamp="1608559127534">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="804" y="207" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1608559127534" />
+    <state x="553" y="199" width="1086" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608559137843">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="553" y="199" width="1086" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608559137843" />
+    <state x="691" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609268301438">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="691" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1609268301438" />
+    <state x="773" y="422" key="ComposerDumpAutoloadDialog" timestamp="1608559147259">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="773" y="422" key="ComposerDumpAutoloadDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608559147259" />
+    <state x="736" y="422" width="446" height="263" key="ComposerInitDialogKey" timestamp="1608557871996">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="736" y="422" width="446" height="263" key="ComposerInitDialogKey/0.0.1920.1080@0.0.1920.1080" timestamp="1608557871996" />
+    <state width="1878" height="29" key="GridCell.Tab.0.bottom" timestamp="1609163611366">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="29" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1609163611366" />
+    <state width="1878" height="29" key="GridCell.Tab.0.center" timestamp="1609163611366">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="29" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1609163611366" />
+    <state width="1878" height="29" key="GridCell.Tab.0.left" timestamp="1609163611365">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="29" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1609163611365" />
+    <state width="1878" height="29" key="GridCell.Tab.0.right" timestamp="1609163611366">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="29" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609163611366" />
+  </component>
+</project>

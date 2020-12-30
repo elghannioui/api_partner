@@ -1,0 +1,21 @@
+{
+  "name": "vendor_name/api_partner",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "DELL",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  "propel/propel": "~2.0.0-alpha11",
+  "klein/klein": "~v2.1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "partner\\": "src/partner"
+    }
+  }
+}

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE database SYSTEM "resources/dtd/database.dtd">
+<database name="default" defaultPhpNamingMethod="nochange" defaultIdMethod="native" namespace="partner">
+
+    <table name="utilisateurs" phpName="Utilisateur">
+        <column name="utilisateurId" phpName="UtilisateurID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="nom" size="64" phpName="Nom" required="true" />
+        <column name="login" size="64" phpName="Login" required="true" />
+        <column name="mot_de_passe" size="64" phpName="MotDePasse" required="true" /> <!-- sha256 -->
+        <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="last_updated" phpName="LastUpdated" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <unique name="UK_UTILISATEUR_LOGIN">
+            <unique-column name="login"/>
+        </unique>
+    </table>
+
+    <table name="clients" phpName="Client">
+        <column name="clientId" phpName="ClientID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="type" phpName="Type" type="ENUM" valueSet="societe, particulier" defaultValue="particulier" required="true" />
+        <column name="nom" phpName="Nom" size="32" />
+        <column name="telephone" phpName="Telephone" size="32" required="true" />
+        <column name="email" phpName="Email" size="64"/>
+        <column name="mot_de_passe" phpName="Password" size="128" />
+        <column name="access_channel" phpName="AccessChannel" type="ENUM" valueSet="Android, IOS, Web,telephone, Autre" defaultValue="telephone"/>
+        <column name="last_connection" phpName="LastConnection" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="last_updated" phpName="LastUpdated" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <unique name="UK_CLIENTS_Telephone">
+            <unique-column name="telephone"/>
+        </unique>
+    </table>
+    <table name="adresses" phpName="Adresse">
+        <column name="adresseId" phpName="AdressID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="libelle"  phpName="Libelle" size="32" required="true" />
+        <column name="ville" phpName="Ville" size="64" required="true" />
+        <column name="numero_bureau" phpName="OfficeNumber" size="64" />
+        <column name="surface_bureau" phpName="OfficeSurface" size="64" />
+        <column name="clientId" phpName="ClientID"  type="INTEGER" required="true" />
+        <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="last_updated" phpName="LastUpdated" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <foreign-key foreignTable="clients" name="FK_ADRESSES_CLIENTS">
+            <reference local="clientId" foreign="clientId"/>
+        </foreign-key>
+        <index name="FK_ADRESSES_CLIENTS">
+            <index-column name="clientId"/>
+        </index>
+    </table>
+
+    <table name="utilisateur_prestation" phpName="Userprestation" >
+        <column name="utilisateur_prestationId" phpName="UserPrestationID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="prestationId" phpName="PrestationID" type="INTEGER" required="true" />
+        <column name="utilisateurId" phpName="UtilisateurID" type="INTEGER"  required="true" />
+        <foreign-key foreignTable="prestations" name="FK_UTILISATEUR_PRESTATION_PRESTATIONS">
+            <reference local="prestationId" foreign="prestationId"/>
+        </foreign-key>
+        <foreign-key foreignTable="utilisateurs" name="FK_UTILISATEUR_PRESTATION_UTILISATEURS">
+            <reference local="utilisateurId" foreign="utilisateurId" />
+        </foreign-key>
+        <index name="FK_UTILISATEUR_PRESTATION_PRESTATIONS">
+            <index-column name="prestationId"/>
+        </index>
+        <index name="FK_UTILISATEUR_PRESTATION_UTILISATEURS">
+            <index-column name="utilisateurId" />
+        </index>
+    </table>
+
+    <table name="categories" phpName="Categorie">
+        <column name="categorieId" phpName="CategorieID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="libelle" phpName="Libelle"  size="32" required="true" />
+        <column name="description" phpName="Description" type="LONGVARCHAR"  />
+        <column name="categorie_media" phpName="CategorieMedia" size="64"/>
+        <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="last_updated" phpName="LastUpdated" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <unique name="UK_CATEGORIES_LIBELE">
+            <unique-column name="libelle"/>
+        </unique>
+    </table>
+    <table name="services" phpName="Service">
+        <column name="serviceId" phpName="ServiceID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="libelle" phpName="Libelle" size="64" required="true" />
+        <column name="description"  phpName="Description" type="LONGVARCHAR"  />
+        <column name="service_media" phpName="ServiceMedia" size="64"/>
+        <column name="categorieId"  phpName="CategorieID" type="INTEGER" required="true" />
+        <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="last_updated" phpName="LastUpdated" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <foreign-key foreignTable="categories" name="FK_SERVICES_CATEGORIES">
+            <reference local="categorieId" foreign="categorieId"/>
+        </foreign-key>
+        <index name="FK_SERVICES_CATEGORIES">
+            <index-column name="categorieId"/>
+        </index>
+        <unique name="UK_SERVICES_LIBELE">
+            <unique-column name="libelle"/>
+        </unique>
+    </table>
+
+    <table name="prestations" phpName="Prestation">
+        <column name="prestationId" phpName="PrestationID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="libelle" phpName="Libelle" size="64" required="true" />
+        <column name="description" phpName="Description" type="LONGVARCHAR"/>
+        <column name="prestation_media" phpName="PrestationMedia" size="64"/>
+        <column name="prix_vente" phpName="PrixVente" type="DOUBLE" required="true" />
+        <column name="serviceId" phpName="ServiceID"  type="INTEGER" required="true" />
+        <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="last_updated" phpName="LastUpdated" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <foreign-key foreignTable="services" name="FK_PRESTATIONS_SERVICES">
+            <reference local="serviceId" foreign="serviceId" />
+        </foreign-key>
+        <index name="FK_PRESTATIONS_SERVICES">
+            <index-column name="serviceId" />
+        </index>
+    </table>
+
+    <table name="devis" phpName="Devi">
+        <column name="deviId" phpName="DeviID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="date_commande" phpName="DateCommande" type="DATE"  />
+        <column name="date_intervention" phpName="DateIntervention" type="DATE" />
+        <column name="date_debut_intevention" phpName="DateDebutIntervention" type="TIMESTAMP"/>
+        <column name="date_fin_intevention" phpName="DateFinIntervention" type="DATE"/>
+        <column name="mode_paiement" phpName="ModePaiement"  type="ENUM" valueSet="cheque, espece, enligne"  defaultValue="espece"/>
+        <column name="statut" phpName="Statut" type="ENUM" valueSet="EnAttente, EnCours, Valide, paye" defaultValue="EnAttente" required="true" />
+        <column name="montant" phpName="Montant" type="DOUBLE"  />
+        <column name="clientId"  phpName="ClientID" type="INTEGER" required="true" />
+        <column name="coordinateurId" phpName="CoordinateurID" type="INTEGER" />
+        <column name="utilisateurId" phpName="UtilisateurID" type="INTEGER" required="true"/>
+        <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="last_updated" phpName="LastUpdated" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+        <foreign-key foreignTable="clients" name="FK_DEVIS_CLIENTS">
+            <reference local="clientId" foreign="clientId"/>
+        </foreign-key>
+        <foreign-key foreignTable="utilisateurs" name="FK_DEVIS_UTILISATEURS">
+            <reference local="utilisateurId" foreign="utilisateurId"/>
+        </foreign-key>
+        <index name="FK_DEVIS_CLIENTS">
+            <index-column name="clientId"/>
+        </index>
+        <index name="FK_DEVIS_UTILISATEURS">
+            <index-column name="utilisateurId"/>
+        </index>
+    </table>
+
+    <table name="prestation_devis" phpName="Prestationdevis" >
+        <column name="prestationdeviId" phpName="PrestationdeviID" type="INTEGER" primaryKey="true" required="true" autoIncrement="true"/>
+        <column name="prix_prestation" phpName="PrixPrestation" type="DOUBLE"/>
+        <column name="quantite" phpName="Quantite" type="INTEGER" defaultValue="1"/>
+        <column name="prestationId"  phpName="PrestationID" type="INTEGER" required="true" />
+        <column name="deviId"  type="INTEGER" phpName="DeviID" required="true" />
+        <foreign-key foreignTable="prestations" name="FK_PRESTATION_DEVIS_PRESTATIONS">
+            <reference local="prestationId" foreign="prestationId"/>
+        </foreign-key>
+        <foreign-key foreignTable="devis" name="FK_PRESTATION_DEVIS_DEVIS">
+            <reference local="deviId" foreign="deviId" />
+        </foreign-key>
+        <index name="FK_PRESTATION_DEVIS_PRESTATIONS">
+            <index-column name="prestationId"/>
+        </index>
+        <index name="FK_PRESTATION_DEVIS_DEVIS">
+            <index-column name="deviId" />
+        </index>
+    </table>
+
+    <vendor type="mysql ">
+        <parameter name="Engine" value="InnoDB"/>
+        <parameter name="Charset" value="utf8"/>
+        <parameter name="Collate" value="utf8_unicode_ci"/>
+    </vendor>
+</database>
